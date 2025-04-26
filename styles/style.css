@@ -16,7 +16,7 @@
   align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font),'intel';
+  font-family: var(--main-font),'intel',sans-serif;
   font-variation-settings: var(--weight-normal);
   background-attachment: fixed;
   background-size: cover;
@@ -24,6 +24,16 @@
   repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
   repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
   linear-gradient(to bottom,#e7e7e7, #1a1a1a);
+}
+
+/*Общий класс для*/
+button {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--accent-color);
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
 }
 
 /*Секция Header*/
@@ -34,18 +44,19 @@
   justify-content: center;
   gap: 20px;
   background-color: #fff;
+  padding: 128px;
   margin-block-start: 100px;
   margin-block-end: 100px;
-  min-block-size: 368px;
   border: 2px solid var(--accent-color);
   /*шрифт*/
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   font-weight: var(--weight-normal);
+  text-transform: uppercase;
 }
 
 /*Отдельный класс для размеров header*/
-.adaptive {
-  inline-size: clamp(var(--header-min-width), 80%, var(--header-max-width));
+.content-width {
+  inline-size: var(--content-width);
 }
 
 /*Главный заголовок в header*/
@@ -56,15 +67,19 @@
 
 /*подзаголовок в секции */
 .header__title-small {
+  display: flex;
+  text-wrap: nowrap;
   line-height: 100%;
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 /*Секция main ----------------------------------------------------------------------*/
-.main__content {
+.cards-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
 }
 
@@ -79,26 +94,25 @@
 
 /*Заголовок внутри карточки*/
 .card__title {
-  font-weight: var(--weight-bold);
+  border-block-end: 2px solid var(--accent-color);
+  font-variation-settings: var(--weight-bold);
   font-size: 18px;
   line-height: 100%;
-  padding: 7px;
-  margin-left: 3px;
+  padding: 7px 10px;
 }
 
 /* Котнейнер с Картинкой*/
-.img__container {
+.card__image-container {
   position: relative;
-  width: clamp(min-content, 100%, 700px);
   aspect-ratio: 1/1;
   overflow: hidden;
 }
 
-.img__container label {
+.text__decoration {
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   font-size: 14px;
   line-height: 100%;
   mix-blend-mode: hard-light;
@@ -106,16 +120,16 @@
   z-index: 1;
 }
 
-.big-text {
+.text-uppercase {
   text-transform: uppercase;
 }
 
-.small-text {
+.text-lowercase {
   text-transform: lowercase;
 }
 
 /*Картинка*/
-.img__container img {
+.card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -127,52 +141,52 @@
   font-size: 18px;
   line-height: 21px;
   padding: 25px;
-}
-
-.paragraph__container p:last-child {
-  padding-top: 29px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px
 }
 
 /*Контейнер like*/
 .button__container {
-  align-self: end;
   display: flex;
+  justify-content: end;
   margin-inline-end: 25px;
   margin-bottom: 25px;
-  max-height: 38px;
+  gap: 6px;
 }
 
-button {
-  border: none;
-  background-color: #fff;
+.card__like-button {
+  display: flex;
+  padding: 8px 35px;
+  align-items: center;
+  justify-content: center;
+  inline-size: 130px;
 }
 
 /*Текст кнопки Like*/
 .button__text {
-  position: relative;
-  font-family: var(--accent-font);
+  cursor: pointer;
+  font-family: var(--accent-font), monospace;
   line-height: 90%;
   font-size: 14px;
   mix-blend-mode: difference;
   color: #fff;
 }
 
-.card__like-button {
-  border: 2px solid var(--accent-color);
-  padding: 0px 35px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s linear; 
-}
-
 /*Анимации*/
 .card__like-button:focus {
   outline: none;
+}
+
+.card__like-button:focus-visible {
   box-shadow: 2px 2px 0px currentColor;
 }
 
-.footer__button:focus {
+.save__button:focus{
   outline: none;
+}
+
+.save__button:focus-visible {
   box-shadow: 2px 2px 0px currentColor;
 }
 
@@ -185,14 +199,30 @@ button {
   height: 100%;
   background-color: var(--accent-color); 
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card__like-button:hover::before {
   transform: translateX(0);
 }
 
-.footer__button::before {
+.save__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color); 
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.save__button:hover::before {
+  transform: translateX(0);
+}
+
+.button__dialog::before {
   content: '';
   position: absolute;
   top: 0;
@@ -204,17 +234,19 @@ button {
   transition: transform 0.3s ease;
 }
 
-.footer__button:hover::before {
+.button__dialog:hover::before {
   transform: translateX(0);
 }
 
 /*Иконка сердца*/
 .card__icon-button {
+  display: flex;
+  border: none;
   outline: 2px solid transparent;
   outline-offset: -2px;
-  transition: outline-color 0.3s ease;
-  cursor: pointer;
-  transition: fill 0.3s linear;
+  fill: currentColor; 
+  transition: outline-color 0.3s ease, fill 0.3s linear; /* Объединение переходов */
+  padding: 1px;
 }
 
 .card__icon-button:focus:not(:focus-visible) {
@@ -244,43 +276,54 @@ button {
 /*При наведении*/
 .card__icon-button:hover .core {
   fill: var(--color-contour);
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
+  transform-origin: center;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--color-contour);
   transition: fill 0.3s linear 0.05s;
+  transform-origin: center;
 }
 
 /*При нажатии*/
 .card__icon-button:active .core {
   fill: var(--fill-color-accent);
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
+  transform-origin: center;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--fill-color-accent);
   transition: fill 0.3s linear 0.05s;
+  transform-origin: center;
 }
 
 /*При быстром клике*/
+.like-icon {
+  cursor: pointer;
+}
+
 .like-icon.is-liked .core {
   fill: var(--fill-color-accent);
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
+  transform-origin:center;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--fill-color-accent);
   transition: fill 0.3s linear 0.05s;
+  transform-origin:center;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--fill-color-accent);
   transition: fill 0.3s linear 0.06s;
+  transform-origin:center;
 }
 
 .like-icon.is-liked .heart{
-  animation: recalculation 0.3s ease-in 0.1s;
+  animation: like-heart-pulse 0.3s ease-in 0.1s;
 }
 /*Искры*/
 .sparks {
@@ -288,30 +331,22 @@ button {
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-animation 0.3s ease-in 0.3s;
+  animation: sparks-show 0.3s ease-in 0.3s;
 }
 
-/*Секция footer-----------------------------------------------------------*/
-.footer {
-  margin-block-start: 43px;
-  margin-bottom: 25px;
-}
-
-.footer__button {
+/*Секция c кнопкой сохранения-----------------------------------------------------------*/
+.save__button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 2px solid var(--accent-color);
-  padding: 15px 19px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s linear; 
+  padding: 15px;
+  inline-size: clamp(306px, 60%, 335px);
+  margin-bottom: 100px;
 }
 
-.footer__button-text {
-  font-family: var(--accent-font);
+.save__button__button-text {
+  font-family: var(--accent-font), monospace;
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
@@ -321,41 +356,54 @@ button {
 
 dialog {
   inline-size: 357px; 
-  min-block-size: 191px;
+  padding: 0;
 }
 
-dialog[opened] {
-  display: flex;
-  flex-direction: column;
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .dialog__content {
   display: flex;
   gap: 20px;
-  padding: 20px;
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
 }
 
 .dialog-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
 }
 
-dialog form {
+.dialog__form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .button__dialog {
-  inline-size: 90%;
+  position: relative;
+  overflow: hidden;
+  inline-size: 100%;
   border: 2px solid var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),monospace;
   font-size: 14px;
   line-height: 90%;
   text-transform: uppercase;
-  padding: 12px 17px;
+  padding: 9px 17px;
+  cursor: pointer;
+}
+
+.button__dialog-text {
+  mix-blend-mode: difference;
+  color: #fff;
 }
 
 .icon {
@@ -372,33 +420,38 @@ dialog form {
 }
 
 /*Картинки*/
-/*ЧБ*/
-.grayscale__img {
+/* Чёрно-белый фильтр */
+.filter-grayscale {
   filter: grayscale(75%) saturate(110%);
 }
 
-/*Кислотная картинка*/
-.bright__img {
+/* Яркий/контрастный */
+.filter-vibrant {
   filter: hue-rotate(15deg) saturate(200%) brightness(1.2);
 }
 
-.hue-rotate__img {
+/* Сдвиг цветового тона */
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.inver__img {
+/* Инверсия цветов */
+.filter-invert {
   filter: invert(80%);
 }
 
-.sepia__img {
+/* Сепия (ретро-эффект) */
+.filter-sepia {
   filter: sepia(90%);
 }
 
-.blur__img {
+/* Размытие */
+.filter-blur {
   filter: blur(10px);
 }
 
-.red__img {
+/* Драматичный эффект (красный + размытие) */
+.filter-dramatic {
   filter: hue-rotate(-270deg) blur(2px) brightness(1.2) sepia(60%);
 }
 
@@ -406,10 +459,10 @@ dialog form {
 @media(width<=375px) {
   
   .header {
-    min-block-size: 327px;
+    padding: 120px;
   }
 
-  .adaptive {
+  .content-width {
     inline-size: 100%;
   }
 
@@ -417,7 +470,7 @@ dialog form {
     inline-size: 100%;
   }
 
-  .footer__button  {
+  .save__button {
     flex-direction: column;
   }
 
@@ -428,10 +481,14 @@ dialog form {
   dialog {
     inline-size: 341px; 
   }
+
+  .text__decoration {
+    right: 13px;
+  }
 }
 
-@supports (text-stroke: 1px #fff) {
-  label {
-    text-stroke: 1px #fff;
+@supports ( -webkit-text-stroke: 1px #fff) {
+  .text__decoration {
+    -webkit-text-stroke: 1px #fff;
   }
 }

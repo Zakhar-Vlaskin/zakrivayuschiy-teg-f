@@ -12,18 +12,19 @@
     <link rel="shortcut icon" href="./images/favicon.ico" sizes="any">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" >
     <link rel="icon" href="./images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png" />
   </head>
   <body class="page">
-    <header class="header adaptive">
+    <header class="header content-width">
         <h1 class="header__title">&lt;/HTML&gt;</h1>
         <h2 class="header__title-small">закрывающий тег</h2>
     </header>
-    <main class="main__content adaptive">
-      <section class="card">
-        <h3 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h3>
-        <div class="img__container">
-          <label class="big-text">&lt;/HTML&gt;</label>
-          <img class="defoult__img" src="./images/image.png" alt="Изображение грузовика на фиолетовом фоне">
+    <main class="cards-container content-width">
+      <article class="card">
+        <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
+        <div class="card__image-container">
+          <span class="text__decoration text-uppercase">&lt;/HTML&gt;</span>
+          <img loading="lazy" class="card-image defoult__img" src="./images/image.png" alt="Изображение грузовика на фиолетовом фоне">
         </div>
         <div class="paragraph__container">
           <p>
@@ -36,7 +37,7 @@
           </p>
         </div>
           <div class="button__container">
-            <button class="card__icon-button">
+            <button type="button" class="card__icon-button">
               <svg
               xmlns="http://www.w3.org/2000/svg" 
               class="like-icon"
@@ -69,15 +70,16 @@
               3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
             </svg>
           </button>
-        <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
+          <!-- такой класс для span написан в задании-->
         </div>
-      </section>
+      </article>
       <!--Карточка Чистый лист-->
-      <section class="card">
-        <h3 class="card__title">1 спринт: Я — чистый лист</h3>
-        <div class="img__container">
-          <label class="big-text">&lt;/HTML&gt;</label>
-          <img class="grayscale__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">1 спринт: Я — чистый лист</h2>
+        <div class="card__image-container">
+          <span class="text__decoration text-uppercase">&lt;/HTML&gt;</span>
+          <img loading="lazy" class="card-image filter-grayscale" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -92,7 +94,7 @@
           </p>
         </div>
         <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -125,15 +127,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка А если не получится-->
-      <section class="card">
-        <h3 class="card__title">1 спринт: А если не получится?</h3>
-        <div class="img__container">
-          <label class="big-text">&lt;css&gt;</label>
-          <img class="bright__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">1 спринт: А если не получится?</h2>
+        <div class="card__image-container">
+          <span class="text__decoration text-uppercase">&lt;css&gt;</span>
+          <img loading="lazy" class="card-image filter-vibrant" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -146,7 +148,7 @@
           </p>
         </div>
          <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -179,15 +181,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка 2 спринт: Погоня за идеалом-->
-      <section class="card">
-        <h3 class="card__title">2 спринт: Погоня за идеалом</h3>
-        <div class="img__container">
-          <label class="small-text">&lt;desigions&gt;</label>
-          <img class="hue-rotate__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
+        <div class="card__image-container">
+          <span class="text__decoration text-lowercase">&lt;desigions&gt;</span>
+          <img loading="lazy" class="card-image filter-hue-rotate" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -201,7 +203,7 @@
           </p>
         </div>
          <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -234,15 +236,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка 2 спринт: О тех, кто рядом-->
-      <section class="card">
-        <h3 class="card__title">2 спринт: О тех, кто рядом</h3>
-        <div class="img__container">
-          <label>care</label>
-          <img class="inver__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
+        <div class="card__image-container">
+          <span class="text__decoration">care</span>
+          <img loading="lazy" class="card-image filter-invert" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -256,7 +258,7 @@
           </p>
         </div>
          <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -289,15 +291,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка 3 спринт: Обходные стратегии-->
-      <section class="card">
-        <h3 class="card__title">3 спринт: Обходные стратегии</h3>
-        <div class="img__container">
-          <label>&lt;support&gt;</label>
-          <img class="sepia__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">3 спринт: Обходные стратегии</h2>
+        <div class="card__image-container">
+          <span class="text__decoration">&lt;support&gt;</span>
+          <img loading="lazy" class="card-image filter-sepia" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -310,7 +312,7 @@
           </p>
         </div>
          <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -343,15 +345,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка 3 спринт: Когда опускаются руки-->
-      <section class="card">
-        <h3 class="card__title">3 спринт: Когда опускаются руки</h3>
-        <div class="img__container">
-          <label>&lt;lifes-style: none;&gt;</label>
-          <img class="blur__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
+        <div class="card__image-container">
+          <span class="text__decoration">&lt;lifes-style: none;&gt;</span>
+          <img loading="lazy" class="card-image filter-blur" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -365,7 +367,7 @@
           </p>
         </div>
          <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -398,15 +400,15 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
       </div>
-      </section>
+      </article>
       <!--Карточка «Сейчас я здесь»-->
-      <section class="card">
-        <h3 class="card__title">«Сейчас я здесь»</h3>
-        <div class="img__container">
-          <label>&lt;experience&gt;</label>
-          <img class="red__img" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
+      <article class="card">
+        <h2 class="card__title">«Сейчас я здесь»</h2>
+        <div class="card__image-container">
+          <span class="text__decoration">&lt;experience&gt;</span>
+          <img loading="lazy" class="card-image filter-dramatic" src="./images/image.png" alt="Изображение того же грузовика но черно-белое">
         </div>
         <div class="paragraph__container">
           <p>
@@ -421,7 +423,7 @@
           </p>
         </div>
         <div class="button__container">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
             xmlns="http://www.w3.org/2000/svg" 
             class="like-icon"
@@ -454,32 +456,33 @@
                3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"/>
            </svg>
           </button>
-          <button class="card__like-button"><span class="button__text">Like</span></button>
+          <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <button type="button" onclick="window['dialog-id'].showModal();" aria-controls="dialog-id" class="footer__button">
+      </article>
+      <button type="button" onclick="window['dialog-id'].showModal();" aria-controls="dialog-id" class="save__button">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39">
           <use href="./svg/floppy.svg#save-icon"></use>
         </svg>
-        <span class="footer__button-text">Сохранить на память</span>
+        <span class="save__button__button-text">Сохранить на память</span>
       </button>
-      <dialog id="dialog-id">
-        <div class="dialog__content">
-          <svg class="icon-big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39">
-            <use href="./svg/floppy.svg#save-icon"></use>
-          </svg>
-          <h3 class="dialog-text">
-            Вставьте <br>
-            дискету, чтобы продолжить
-          </h3>
-        </div>
-        <form method="dialog">
-          <button class="button__dialog">ок</button>
-        </form> 
-      </dialog>
-    </footer>
+        <dialog id="dialog-id">
+          <div class="dialog__container">
+            <div class="dialog__content">
+              <svg class="icon-big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39">
+                <use href="./svg/floppy.svg#save-icon"></use>
+              </svg>
+              <h3 class="dialog-text">
+                Вставьте <br>
+                дискету, чтобы продолжить
+              </h3>
+            </div>
+            <form class="dialog__form" method="dialog">
+              <button type="submit" class="button__dialog"><span class="button__dialog-text">ок</span></button>
+            </form> 
+          </div>
+        </dialog>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

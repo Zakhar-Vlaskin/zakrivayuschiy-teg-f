@@ -9,7 +9,7 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-@keyframes recalculation {
+@keyframes like-heart-pulse {
   from {
     scale: 1;
  }
@@ -19,7 +19,7 @@
   }
 }
 
-@keyframes sparks-animation {
+@keyframes sparks-show {
   from {
     opacity: 0;
  }
