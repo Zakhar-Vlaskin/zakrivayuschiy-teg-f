@@ -89,7 +89,7 @@
 /* Котнейнер с Картинкой*/
 .img__container {
   position: relative;
-  width: clamp(375px, 100%, 700px);
+  width: clamp(min-content, 100%, 700px);
   aspect-ratio: 1/1;
   overflow: hidden;
 }
