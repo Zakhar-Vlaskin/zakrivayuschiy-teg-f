@@ -9,26 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-@keyframes fill {
-  from {
-    translate: -100% 0%;
-  }
-
-  to {
-    translate: 0% 0%;
-  }
-}
-
-@keyframes unfill {
-  from {
-     translate: 0% 0%; 
-  }
-
-  to { 
-    translate: -100% 0%;
- }
-}
-
 @keyframes recalculation {
   from {
     scale: 1;
