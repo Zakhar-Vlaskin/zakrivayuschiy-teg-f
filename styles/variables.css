@@ -1,1 +1,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+--main-font:'Intel-Variable';
+--accent-font: 'PressStart2P-Regular';
+--weight-normal: 400;
+--weight-bold: 700;
+--bg-image:linear-gradient(#E7E7E7,#1A1A1A);
+--header-min-width: 320px;
+--header-max-width: 700px;
+--accent-color: #000;
+--color-contour:#000;
+--fill-color-accent: red;
+}
